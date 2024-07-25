@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <table>
+        <tr>
+    <div class="topnav">
+        <h2>IMAGE GALLERY</h2>
+    
+
+        <a href="slideshow.html"><img src="assest/slideshow.png" style="width: 50px; height: 40px;"></a>
+      </div>
+</tr>
+<tr>
+    <div class="view-image">
+        <img src="assest/first.jpg" alt="">
+        <span>X</span>
+    </div>
+
+    <div class="image-container">
+        <img src="assest/first.jpg" alt="">
+        <img src="assest/1.jpg" alt="">
+        <img src="assest/2.jpg" alt="">
+        <img src="assest/3.jpg" alt="">
+        <img src="assest/4.jpg" alt="">
+        <img src="assest/5.jpg" alt="">
+        <img src="assest/6.jpg" alt="">
+        <img src="assest/7.jpg" alt="">
+        <img src="assest/8.jpg" alt="">
+        <img src="assest/10.jpg" alt="">
+        <img src="assest/11.jpg" alt="">
+        <img src="assest/12.jpg" alt="">
+
+    </div>
+</tr>
+</table>
+</body>
+<script>
+    let images = document.querySelectorAll(".image-container img");
+    let viewImage = document.querySelector(".view-image");
+    let fullImage = document.querySelector(".view-image img");
+    let closeBtn = document.querySelector(".view-image span");
+    for(let image of images){
+        image.addEventListener("click",function(e){
+            console.log(e);
+            viewImage.style.display = "flex";
+            fullImage.src = e.target.src;
+        })
+    }
+    closeBtn.addEventListener('click',function(){
+        viewImage.style.display = "none";
+    })
+</script>
+</html>
